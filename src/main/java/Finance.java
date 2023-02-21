@@ -11,11 +11,11 @@ public class Finance {
             MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>"
     );
 
-    private static boolean validateCommandArguments(String[] args){
-        switch(args[0]){
-
-
-        }
-        return
-    }
-}
+//    private static boolean validateCommandArguments(String[] args){
+//        switch(args[0]){
+//
+//
+//        }
+//        return
+//    }
+//}
