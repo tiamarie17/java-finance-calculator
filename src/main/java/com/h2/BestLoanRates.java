@@ -14,9 +14,11 @@ public class BestLoanRates {
     }
 
 //    This method returns the best rate available for the loan term in years
-    public static float getRates(int loanTermInYears){
+    public static Map<Integer, Float> getRates(int loanTermInYears){
         if (bestRates.containsKey(loanTermInYears)){
-            return bestRates
+            return null;
+        }else {
+            return 0.0f;
         }
     }
 
