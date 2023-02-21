@@ -32,12 +32,12 @@ public class MortgageCalculator {
         int n = getNumberOfPayments();
 
         double M = P * (((r * Math.pow(1 + r, n))) / ((Math.pow((1 + r), n)) - 1));
-        M = this.monthlyPayment;
+        this.monthlyPayment = M;
     }
 
     public String toString() {
         DecimalFormat df = new DecimalFormat("####0.00");
-       return "monthly payment: " + df.format(monthlyPayment);
+       return "monthlyPayment: " + df.format(monthlyPayment);
     }
 
     public static void main(String[] args) {
@@ -45,12 +45,9 @@ public class MortgageCalculator {
         int termInYears = Integer.parseInt(args[1]);
         float annualRate = Float.parseFloat(args[2]);
 
-        final MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+        MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
         System.out.println(calculator.toString());
     }
-
-
-
 
 }
