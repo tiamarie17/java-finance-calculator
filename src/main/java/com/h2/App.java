@@ -1,9 +1,5 @@
 package com.h2;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
@@ -16,13 +12,17 @@ public class App
     }
 
     private static int add(int[] numbers) {
-        int sum = 0 ;
-        int index;
-        for(index = 0; index > numbers.length; index++){
-            numbers[index] += sum;
+        int sum = 0;
+        for(int index = 0; index < numbers.length; index ++){
+            sum += numbers[index];
         }
         return sum;
     }
 }
 
-
+/*
+Alternative for loop:
+int sum = 0;
+for (int number: numbers){
+sum += number;
+}*/
