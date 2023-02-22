@@ -39,12 +39,12 @@ public class Finance {
             return;
 
             case SAVINGS_CALCULATOR:
-            System.out.println("Finding your net savings...");
+            System.out.println("Finding your net savings ...");
             SavingsCalculator.main(arguments);
             return;
 
             case MORTGAGE_CALCULATOR:
-            System.out.println("Finding your monthly payment...");
+            System.out.println("Finding your monthly payment ...");
             MortgageCalculator.main(arguments);
             return;
 
