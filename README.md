@@ -9,9 +9,8 @@ The public utilities class handles exceptions in case the user enters a command 
 
 ##What I Learned:
 Creating this program helped me gain a deeper understanding of packages, classes, objects, and constructors in Java.
-I also gained a better understanding of type conversion and data types in Java. I'm really excited to keep learning Java!
+I also gained a better understanding of type conversion and data types in Java. As I continue to practice the fundamentals of Java and its Object-oriented mechanics, I'm also looking forward to applying Object-Oriented design principles to my apps. 
 
 
 ##Technologies used:
-Java
-IntelliJ 
+Java, IntelliJ IDEA
