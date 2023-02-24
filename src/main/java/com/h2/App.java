@@ -1,10 +1,6 @@
 package com.h2;
 
 import java.util.Scanner;
-import com.h2.BestLoanRates;
-import com.h2.SavingsCalculator;
-import com.h2.MortgageCalculator;
-import com.h2.Utilities;
 
 public class App
 {
@@ -12,24 +8,41 @@ public class App
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select a service: Enter 'bestLoanRates', 'savingsCalculator', or 'mortgageCalculator'.");
         String[] service = new String[]{scanner.nextLine()};
-        if (service[0].equals( "bestLoanRates")) {
-            System.out.println("Enter your loan term in years");
-            int loanTermInYears = scanner.nextInt();
-            float result = BestLoanRates.getRates(loanTermInYears);
-            System.out.println("Your rate is " + result);
 
-//        }else if (service[0] == "savingsCalculator") {
-//            SavingsCalculator.main();
-//        }else if (service[0] == "mortgageCalculator") {
-//            MortgageCalculator.main();
-//        }
-//        else {
-//            System.out.println("Did not receive a valid service. Exiting program.");
-//        }
-            scanner.close();
+        switch (service[0]) {
+            case "bestLoanRates":
+                System.out.println("Enter your loan term in years");
+                int loanTermInYears = scanner.nextInt();
+                float result = BestLoanRates.getRates(loanTermInYears);
+                System.out.println("Your rate is " + result);
+                break;
+            case "savingsCalculator":
+                System.out.println("Enter your total savings amount:");
+                float credit = scanner.nextFloat();
+                System.out.println("Enter your total expenses:");
+                float debit = scanner.nextFloat();
+                float netSavings = credit - debit;
+                System.out.println("Your net savings is $" + netSavings);
+                break;
+            case "mortgageCalculator":
+                System.out.println("Enter your loan amount: ");
+                long loanAmount = scanner.nextLong();
+
+                System.out.println("Enter your term in years:");
+                int termInYears = scanner.nextInt();
+
+                System.out.println("Enter your annual rate:");
+                float annualRate = scanner.nextFloat();
+
+                MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+                calculator.calculateMonthlyPayment();
+                System.out.println(calculator.toString());
+                break;
+            default:
+                System.out.println("Did not receive a valid service. Exiting program.");
         }
+        scanner.close();
     }
-
 
 
     public static int doubleTheNumber(int number) {
