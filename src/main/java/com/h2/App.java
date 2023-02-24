@@ -18,10 +18,11 @@ public class App
                 break;
             case "savingsCalculator":
                 System.out.println("Enter your total savings amount:");
-                float credit = scanner.nextFloat();
+                float[] credit = new float[]{scanner.nextFloat()};
                 System.out.println("Enter your total expenses:");
-                float debit = scanner.nextFloat();
-                float netSavings = credit - debit;
+                float[] debit = new float[]{scanner.nextFloat()};
+                SavingsCalculator savingsCalculator = new SavingsCalculator(credit, debit);
+                float netSavings = savingsCalculator.calculate();
                 System.out.println("Your net savings is $" + netSavings);
                 break;
             case "mortgageCalculator":
@@ -34,9 +35,9 @@ public class App
                 System.out.println("Enter your annual rate:");
                 float annualRate = scanner.nextFloat();
 
-                MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
-                calculator.calculateMonthlyPayment();
-                System.out.println(calculator.toString());
+                MortgageCalculator mortgageCalculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+                mortgageCalculator.calculateMonthlyPayment();
+                System.out.println(mortgageCalculator.toString());
                 break;
             default:
                 System.out.println("Did not receive a valid service. Exiting program.");
